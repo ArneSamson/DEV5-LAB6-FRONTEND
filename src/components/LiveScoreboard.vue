@@ -15,6 +15,18 @@
             const data = JSON.parse(event.data);
 
             console.log(data);
+
+            switch (data.team){
+                case 1:
+                    teams.value[0].score = data.score;
+                    break;
+                case 2:
+                    teams.value[1].score = data.score;
+                    break;
+                default:
+                    console.log("invalid team");
+            }
+
         };
     });
 </script>
