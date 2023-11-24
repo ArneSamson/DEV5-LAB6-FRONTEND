@@ -1,4 +1,3 @@
-// router.js
 import { createRouter, createWebHistory } from "vue-router";
 import LiveScoreboard from "./components/LiveScoreboard.vue";
 import UpdateScoreboard from "./components/UpdateScoreboard.vue";
