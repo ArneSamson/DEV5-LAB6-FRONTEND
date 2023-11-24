@@ -1,11 +1,12 @@
 <script setup>
   import LiveScoreboard from './components/LiveScoreboard.vue';
   import UpdateScoreboard from './components/UpdateScoreboard.vue';
+  import router from './router';
 </script>
 
 <template>
   <div>
-    <UpdateScoreboard />
+    <router-view />
   </div>
 
 </template>
