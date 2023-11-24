@@ -9,12 +9,10 @@
     let socket = null;
 
     onMounted(() => {
-        socket = new WebSocket('ws://localhost:3000');
+        socket = new WebSocket('ws://localhost:3000/primus');
 
         socket.onmessage = (event) => {
             const data = JSON.parse(event.data);
-            score.value = data.score;
-            team.value = data.team;
 
             console.log(data);
         };
