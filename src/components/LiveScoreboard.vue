@@ -1,8 +1,10 @@
-<script>
+<script setup>
     import {ref, onMounted} from 'vue';
 
-    let score = ref(0);
-    let team = ref('home');
+    const teams = ref([
+        {name: 'Team 1', score: 0},
+        {name: 'Team 2', score: 0},
+    ]);
 
     let socket = null;
 
@@ -20,11 +22,25 @@
 </script>
 
 <template>
-  <div>
-    
-  </div>
-
-</template>
+    <div>
+      <h1>Team Scores</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="team in teams">
+            <td>{{ team.name }}</td>
+            <td>{{ team.score }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </template>
+  
 
 <style scoped>
 </style>
