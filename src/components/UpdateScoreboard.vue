@@ -6,21 +6,24 @@
     const team = ref(1);
 
     const updateScoreboard = () => {
-
         const data = {
             team: team.value,
             score: score.value,
         };
 
-        socket.send(JSON.stringify(data));
+        if (socket.readyState === WebSocket.OPEN){
+            socket.send(JSON.stringify(data));
+            console.log(data);
+        }else{
+            console.log("socket not ready");
+        }
 
-        console.log(data);
 
         
     };
 
     onMounted(() => {
-        socket = new WebSocket('ws://localhost:3000');
+        socket = new WebSocket('ws://localhost:3000/primus');
 
         socket.onmessage = (event) => {
             const data = JSON.parse(event.data);
