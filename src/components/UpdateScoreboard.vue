@@ -7,7 +7,7 @@
 
     const updateScoreboard = () => {
         const data = {
-            team: team.value,
+            team: parseInt(team.value, 10),
             score: score.value,
         };
 
