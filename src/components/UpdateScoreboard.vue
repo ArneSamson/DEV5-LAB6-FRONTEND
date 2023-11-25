@@ -44,14 +44,18 @@
     <div>
         <h1>Update Score</h1>
         <form @submit.prevent="updateScoreboard">
-            <label for="team">Team</label>
-            <select id="team" v-model="team">
-                <option value="1">Gambit</option>
-                <option value="2">Östersnud</option>
-                <option value="3">Bambino</option>
-            </select>
-            <label for="score">Score</label>
-            <input type="number" id="score" v-model="score" />
+            <div class="form-containers">
+                <label for="team">Team</label>
+                <select id="team" v-model="team">
+                    <option value="1">Gambit</option>
+                    <option value="2">Östersnud</option>
+                    <option value="3">Bambino</option>
+                </select>
+            </div>
+            <div class="form-containers">
+                <label for="score">Score</label>
+                <input type="number" id="score" v-model="score" />
+            </div>
             <button type="submit">Update Score</button>
         </form>
     </div>
@@ -62,5 +66,15 @@
 </template>
 
 <style scoped>
-
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto;
+    }
+    .form-containers{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
 </style>
