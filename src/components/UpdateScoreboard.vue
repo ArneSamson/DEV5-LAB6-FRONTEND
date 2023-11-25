@@ -34,8 +34,9 @@
         <form @submit.prevent="updateScoreboard">
             <label for="team">Team</label>
             <select id="team" v-model="team">
-                <option value="1">Team 1</option>
-                <option value="2">Team 2</option>
+                <option value="1">Gambit</option>
+                <option value="2">Östersnud</option>
+                <option value="3">Bambino</option>
             </select>
             <label for="score">Score</label>
             <input type="number" id="score" v-model="score" />
