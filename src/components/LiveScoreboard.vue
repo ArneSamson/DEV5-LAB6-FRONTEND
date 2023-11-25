@@ -12,20 +12,26 @@
         socket = new WebSocket('ws://localhost:3000/primus');
 
         socket.onmessage = (event) => {
+  
             const data = JSON.parse(event.data);
+            
+            if(data.team){
 
-            console.log(data);
-
-            switch (data.team){
-                case 1:
-                    teams.value[0].score = data.score;
-                    break;
-                case 2:
-                    teams.value[1].score = data.score;
-                    break;
-                default:
-                    console.log("invalid team");
+              console.log(data);
+              console.log(data.team);
+              
+              switch (data.team){
+                  case 1:
+                      teams.value[0].score = data.score;
+                      break;
+                  case 2:
+                      teams.value[1].score = data.score;
+                      break;
+                  default:
+                      console.log("invalid team");
+              }
             }
+
 
         };
     });
