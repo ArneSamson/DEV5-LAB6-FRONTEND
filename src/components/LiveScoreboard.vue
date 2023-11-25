@@ -9,7 +9,7 @@
     let socket = null;
 
     onMounted(() => {
-        socket = new WebSocket('ws://localhost:3000/primus');
+        socket = new WebSocket('wss://labo6-back-arne.onrender.com/primus');
 
         socket.onmessage = (event) => {
   
