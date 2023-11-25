@@ -56,7 +56,7 @@
 </script>
 
 <template>
-    <div>
+    <div class="container">
       <h1>Team Scores</h1>
       <table>
         <thead>
@@ -77,4 +77,17 @@
   
 
 <style scoped>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    .container{
+        text-align: center;
+    }
+    
 </style>
