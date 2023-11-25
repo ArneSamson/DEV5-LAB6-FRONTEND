@@ -14,11 +14,23 @@
         if (socket.readyState === WebSocket.OPEN){
             socket.send(JSON.stringify(data));
             console.log(data);
+
+            //send data to API via https://dev5-lab4.onrender.com/api/v1/score/1 for team 1 with PUT request
+            try{
+                fetch('https://dev5-lab4.onrender.com/api/v1/score/' + data.team, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({score: data.score}),
+                })
+                }catch(error){
+                    console.log(error);
+                };
+
         }else{
             console.log("socket not ready");
-        }
-
-
+        }        
         
     };
 
